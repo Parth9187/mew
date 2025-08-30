@@ -1,7 +1,0 @@
-defaults:
-  - profile: local
-  - exp: toy
-
-seed: 42
-run:
-  dir: runs/${now:%Y-%m-%d}/${now:%H-%M-%S}

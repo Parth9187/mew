@@ -1,5 +1,0 @@
-trainer:
-  accelerator: "cpu"   # flip to "mps" later if you want Apple GPU
-  precision: 32
-log:
-  level: "info"
