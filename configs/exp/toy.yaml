@@ -1,0 +1,11 @@
+# config for toy experiment
+trainer:
+  max_steps: 200
+  accelerator: cpu
+  precision: 32
+model:
+  dim_in: 16
+  dim_out: 8
+optim:
+  lr: 0.1
+seed: 42

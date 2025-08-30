@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          pip install --upgrade pip
+          pip install torch pytorch-lightning hydra-core typer rich ruff pytest
+
+      - name: Run Ruff lint
+        run: ruff check .
+
+      - name: Run toy training
+        run: python -m mew train --exp=toy
